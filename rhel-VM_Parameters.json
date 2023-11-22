@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus"
+        },
+        "virtualMachineName": {
+            "value": "am01lxsql0001"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_DS1_v2"
+        },
+        "adminUsername": {
+            "value": "azadmin"
+        },
+        "virtualNetworkName": {
+            "value": "wvd-vnet"
+        },
+        "networkInterfaceName": {
+            "value": "am01lxsql0001-nic01"
+        },
+	    "virtualNetworkRGName": {
+            "value": "docker"
+        },
+        "adminPassword": {
+            "value": "Password@123"
+        },
+        "subnetName": {
+            "value": "default"        
+        }
+    }
+}

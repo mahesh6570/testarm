@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "WestEurope"
+        },
+        "virtualMachineName": {
+            "value": "LMAPAZ2PLMPRD04"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "lmgadmin"
+        },
+        "virtualNetworkName": {
+            "value": "VNET_AZ2_PRD"
+        },
+        "networkInterfaceName": {
+            "value": "LMAPAZ2PLMPRD04-NIC0"
+        },
+		"virtualNetworkRGName": {
+            "value": "RG_AZ2_PRD_NW"
+        },
+        "adminPassword": {
+            "value": "landmark$J2C"
+        },
+        "subnetName": {
+            "value": "SNET_AZ2_PRD_APP_1"
+        }
+    }
+}
