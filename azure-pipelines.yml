@@ -9,6 +9,9 @@ trigger:
 pool:
   name: newpipeline
 
+variables:
+- group: test
+
 jobs:
   - job: armtemplets
     steps:
