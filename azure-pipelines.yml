@@ -18,7 +18,7 @@ jobs:
       - task: AzureResourceManagerTemplateDeployment@3
         inputs:
           deploymentScope: 'Resource Group'
-          azureResourceManagerConnection: 'sn-test'
+          # azureResourceManagerConnection: 'sn-test'
           subscriptionId: '2f24afd5-0f94-4004-aa8a-cc88e903aceb'
           action: 'Create Or Update Resource Group'
           resourceGroupName: 'test'
