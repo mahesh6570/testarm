@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  name: newpipeline
+
+jobs:
+  - job: armtemplets
+    steps:
+      - task: AzureResourceManagerTemplateDeployment@3
+        inputs:
+          deploymentScope: 'Resource Group'
+          azureResourceManagerConnection: 'sn-test'
+          subscriptionId: '2f24afd5-0f94-4004-aa8a-cc88e903aceb'
+          action: 'Create Or Update Resource Group'
+          resourceGroupName: 'test'
+          location: 'East US'
+          templateLocation: 'URL of the file'
+          csmFileLink: 'https://github.com/mahesh6570/testarm/blob/master/Win-VM_Template.json'
+          csmParametersFileLink: 'https://github.com/mahesh6570/testarm/blob/master/Win-VM_Parameters.json'
+          deploymentMode: 'Incremental'
