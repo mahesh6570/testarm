@@ -9,7 +9,7 @@
             "value": "newtest"
         },
         "virtualMachineSize": {
-            "value": "Standard_D2s_v3"
+            "value": "Standard B2s"
         },
         "adminUsername": {
             "value": "ansible"
