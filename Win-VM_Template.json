@@ -72,14 +72,14 @@
                    {
                     "diskSizeGB": 32,
                     "lun": 0,
-                    "name": "am01lxsql0001-datadisk01",
+                    "name": "test-datadisk01",
                     "createOption": "Empty"
                    },
                   
                   {
                     "diskSizeGB": 32,
                     "lun": 1,
-                    "name": "am01lxsql0001-datadisk02",
+                    "name": "test-datadisk02",
                     "createOption": "Empty"
                    }
                  ]
