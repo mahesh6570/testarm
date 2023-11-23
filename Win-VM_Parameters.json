@@ -3,31 +3,31 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
-            "value": "WestEurope"
+            "value": "East US"
         },
         "virtualMachineName": {
-            "value": "LMAPAZ2PLMPRD04"
+            "value": "newtest"
         },
         "virtualMachineSize": {
             "value": "Standard_D2s_v3"
         },
         "adminUsername": {
-            "value": "lmgadmin"
+            "value": "ansible"
         },
         "virtualNetworkName": {
-            "value": "VNET_AZ2_PRD"
+            "value": "querytesting1"
         },
         "networkInterfaceName": {
-            "value": "LMAPAZ2PLMPRD04-NIC0"
+            "value": "test-NIC0"
         },
 		"virtualNetworkRGName": {
-            "value": "RG_AZ2_PRD_NW"
+            "value": "test"
         },
         "adminPassword": {
-            "value": "landmark$J2C"
+            "value": "adm1nlnx!234"
         },
         "subnetName": {
-            "value": "SNET_AZ2_PRD_APP_1"
+            "value": "newsubnet"
         }
     }
 }
