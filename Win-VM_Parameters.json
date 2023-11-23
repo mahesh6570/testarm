@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
-            "value": "East US"
+            "value": "eastus"
         },
         "virtualMachineName": {
             "value": "newtest"
         },
         "virtualMachineSize": {
-            "value": "Standard B2s"
+            "value": "Standard_B2s"
         },
         "adminUsername": {
             "value": "ansible"
