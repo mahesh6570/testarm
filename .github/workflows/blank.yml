@@ -40,6 +40,6 @@ jobs:
       - name: Deploy ARM Template
         run: |
           # az login --service-principal -u "YourServicePrincipalAppId" -p "YourServicePrincipalPassword" --tenant "YourTenantId"
-          az login --use-device-code
+          az login
           az account set --subscription "2f24afd5-0f94-4004-aa8a-cc88e903aceb"
           az deployment group create --resource-group githubactions --template-file testarm/arm templet.json
