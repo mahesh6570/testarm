@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "type": "Microsoft.Compute/virtualMachines",
+      "apiVersion": "2019-03-01",
+      "name": "githubactions",
+      "location": "eastus",
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "Standard_DS1_v2"
+        },
+        "osProfile": {
+          "computerName": "testvm",
+          "adminUsername": "ansible",
+          "linuxConfiguration": {
+            "disablePasswordAuthentication": true,
+            "ssh": {
+              "publicKeys": [
+                {
+                  "path": "/home/ansible/.ssh/authorized_keys",
+                  "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCCAvzw5hSPj2fChv6XBSt8gXjKHC4d1FyviRASbQngTTXjzlEhMYVvRs8ikpJNRuC4DKbEH+wRj26f/0TMaYL6xLqWTdmHDsdvuAzpAdWQX3h9XI71HyzB36Qs5FGeC+rtK+CZ5qfQ+6vrcawVGrg168ngd5IlTYvAtmrXanhEnQ2TPp+hAXqz7Qzwu01Kg7J2j6t4/XlROSgpky4nAweGgeaLglUfiamqNH3xQFY582JyE3JBSrzb4K3nNSlfwuxaKeOQM5Ax8qRR12WsLrtMoWPNwhFTdZCC7RbgP1he4buS1JmVfFsSdkCXLxxcQmzxixXdU1L4mIevaAl9CpmV rsa-key-20231127"
+                }
+              ]
+            }
+          }
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "Canonical",
+            "offer": "UbuntuServer",
+            "sku": "22.04-LTS",
+            "version": "latest"
+          },
+          "osDisk": {
+            "createOption": "FromImage"
+          }
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', 'testvm-nic01')]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2019-11-01",
+      "name": "testvm-nic01",
+      "location": "eastus",
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "testvm-ipconfig01",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
