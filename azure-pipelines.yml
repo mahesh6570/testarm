@@ -1,26 +1,23 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Starter pipeline for deploying ARM templates
 
 trigger:
-- master
+- master  # This will trigger the pipeline on pushes to the master branch
 
 pool:
-  name: newpipeline
+  name: Azure Pipelines  # Specify the pool name where the agent will run
 
 jobs:
-  - job: armtemplets
+  - job: armTemplateDeployment  # Name the job meaningfully
     steps:
-      - task: AzureResourceManagerTemplateDeployment@3
+      - task: AzureResourceManagerTemplateDeployment@3  # Task to deploy ARM templates
         inputs:
-          deploymentScope: 'Resource Group'
-          azureResourceManagerConnection: 'sn-test'
-          subscriptionId: '2f24afd5-0f94-4004-aa8a-cc88e903aceb'
-          action: 'Create Or Update Resource Group'
-          resourceGroupName: 'test'
-          location: 'East US'
-          templateLocation: 'URL of the file'
-          csmFileLink: 'https://github.com/mahesh6570/testarm/blob/master/Win-VM_Template.json'
-          csmParametersFileLink: 'https://github.com/mahesh6570/testarm/blob/master/Win-VM_Parameters.json'
-          deploymentMode: 'Incremental'
+          deploymentScope: 'Resource Group'  # Scope of the deployment
+          azureResourceManagerConnection: 'sn-test'  # Name of the service connection
+          subscriptionId: '2f24afd5-0f94-4004-aa8a-cc88e903aceb'  # Azure subscription ID
+          action: 'Create Or Update Resource Group'  # Action to create or update resources
+          resourceGroupName: 'test'  # Name of the resource group
+          location: 'East US'  # Location for the resource group
+          templateLocation: 'Linked artifact'  # Update to indicate using linked artifact
+          csmFileLink: 'https://raw.githubusercontent.com/mahesh6570/testarm/master/Win-VM_Template.json'  # Corrected raw URL
+          csmParametersFileLink: 'https://raw.githubusercontent.com/mahesh6570/testarm/master/Win-VM_Parameters.json'  # Corrected raw URL
+          deploymentMode: 'Incremental'  # Deployment mode (Incremental or Complete)
